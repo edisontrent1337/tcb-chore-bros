@@ -1,40 +1,32 @@
 import './App.css';
-import '@mdi/font/css/materialdesignicons.min.css';
-import {useState} from "react";
-import choreData from './chores/chores.json';
-import Chore from "./chores/Chore";
-import search from "@jukben/emoji-search";
+import {useEffect, useState} from 'react';
+import taskData from './tasks/tasks.json';
+import TaskList from './tasks/TaskList';
+import TaskCreator from "./tasks/TaskCreator";
 
 function App() {
 
-    const [chores, setChores] = useState(choreData);
-    const [searchTerm, setSearchTerm] = useState("");
-    const [taskName, setTaskName] = useState("");
-    const [emoji, setEmoji] = useState("");
+    const [tasks, setTasks] = useState(taskData);
 
-    const results = search(searchTerm);
+    useEffect(() => {
+        [tasks].map(e => console.log(e))
+    })
+
+    function createTask(taskName, emoji) {
+        setTasks([...tasks, {
+            'name': taskName,
+            'unicodeEmoji': emoji
+        }])
+    }
+
     return (
-        <div className={"container"}>
-            <div className={'w-100 pt-5'}>
-                <h3>Tasks</h3>
-
-                {chores.map((c, i) => <Chore key={i} chore={c}/>)
-                }
+        <div className={'container p-4'}>
+            <div className={'row'}>
+                <TaskList tasks={tasks}/>
+                <TaskCreator createTask={createTask}/>
             </div>
-            <h3>Neuen Task erstellen</h3>
-            <label>Name</label>
-            <div className={'py-2'}>
-                <input type={'text'} onChange={e => setTaskName(e.target.value)} value={taskName}/>
-            </div>
-            <label>Emoji</label>
-            <div className={'py-2'}>
-                <input onChange={(e) => setSearchTerm(e.target.value)}/>
-                <span>{emoji}</span>
-            </div>
-            <div className={'btn btn-primary'} onClick={(e) => setChores([...chores, {"name": taskName, 'unicodeEmoji': emoji }])}>Create Task</div>
-            {results.map((r, i) => <span key={i} onClick={e => setEmoji(r.char)}>{r.char}</span>)}
         </div>
-    );
+);
 }
 
 export default App;
