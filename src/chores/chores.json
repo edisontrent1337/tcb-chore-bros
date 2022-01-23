@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Geschirr spülen",
+    "unicodeEmoji": "\uD83C\uDF7D",
+    "xp": 1
+  },
+  {
+    "name": "Katzen füttern",
+    "unicodeEmoji": "🐈",
+    "xp": 1
+  },
+  {
+    "name": "Staubsaugen",
+    "unicodeEmoji": "\uD83D\uDCA8"
+  },
+  {
+    "name": "Müll rausbringen",
+    "unicodeEmoji": "♻️"
+  },
+  {
+    "name": "Einkaufen",
+    "unicodeEmoji": "\uD83D\uDED2"
+  },
+  {
+    "name": "Kochen",
+    "unicodeEmoji": "\uD83E\uDD58"
+  },
+  {
+    "name": "Pflanzen gießen",
+    "unicodeEmoji": "\uD83C\uDF3F"
+  }
+]
