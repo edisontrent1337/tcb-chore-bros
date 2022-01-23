@@ -7,16 +7,15 @@ import TaskCreator from "./tasks/TaskCreator";
 function App() {
 
     const [tasks, setTasks] = useState(taskData);
-
+    console.log(tasks);
     useEffect(() => {
-        [tasks].map(e => console.log(e))
+        tasks.map(task => console.log(task))
     })
 
-    function createTask(taskName, emoji) {
-        setTasks([...tasks, {
-            'name': taskName,
-            'unicodeEmoji': emoji
-        }])
+    // first build a static version
+    function createTask(name, unicodeEmoji) {
+        const updatedTasks = [...tasks, {name, unicodeEmoji}]
+        setTasks(updatedTasks);
     }
 
     return (
@@ -26,7 +25,7 @@ function App() {
                 <TaskCreator createTask={createTask}/>
             </div>
         </div>
-);
+    );
 }
 
 export default App;

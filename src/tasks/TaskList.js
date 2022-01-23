@@ -1,9 +1,7 @@
 import Task from "./Task";
 
 function TaskList(props) {
-
     const {tasks} = props;
-
     return (
         <div className={'col-sm'}>
             <h3>Tasks</h3>

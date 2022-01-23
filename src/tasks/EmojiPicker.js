@@ -1,5 +1,6 @@
 import {useState} from "react";
 import search from "@jukben/emoji-search";
+import './EmojiPicker.css';
 
 function EmojiPicker(props) {
     const [searchTerm, setSearchTerm] = useState('');
@@ -11,14 +12,9 @@ function EmojiPicker(props) {
         }}>
             <label>Emoji Picker</label>
             <div className={'py-2 d-flex'}>
-                <input onChange={(e) => setSearchTerm(e.target.value)}/>
+                <input type={'text'} onChange={(e) => setSearchTerm(e.target.value)}/>
             </div>
-            <div style={{
-                height: '100px',
-                overflowY: 'scroll',
-                border: '1px solid grey',
-                borderRadius: '8px'
-            }}>
+            <div className={'emoji-picker'}>
                 {results.map((r, i) =>
                     <span style={{fontSize: '20px'}} key={i} onClick={_ => setEmoji(r.char)}>{r.char}</span>)}
             </div>

@@ -1,0 +1,6 @@
+.emoji-picker {
+    height: 100px;
+    overflow-y: scroll;
+    border: 1px solid grey;
+    border-radius: 8px;
+}

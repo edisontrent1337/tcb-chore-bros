@@ -5,7 +5,7 @@ function TaskCreator(props) {
     const [taskName, setTaskName] = useState('');
     const [emoji, setEmoji] = useState('');
     const {createTask} = props;
-
+    console.log(taskName);
     return (
         <div className={'col-sm'}>
             <h3>Neuen Task erstellen</h3>

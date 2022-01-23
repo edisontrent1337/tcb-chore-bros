@@ -3,7 +3,8 @@
 h3, label {
     color: white;
 }
-.chore {
+
+.task {
     border-radius: 30px;
     box-shadow: 5px 4px 10px 1px rgba(33, 33, 33, 0.16);
     background-color: white;
@@ -13,7 +14,7 @@ h3, label {
     color: #3a3d48;
     font-family: 'Roboto', serif;
     max-width: 350px;
-    margin: 0 auto 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -24,27 +25,26 @@ body {
 
 .emoji {
     width: 40px;
-    line-height: 40px;
     height: 40px;
     margin-top: 10px;
     margin-left: 10px;
-    text-align: center;
     border-radius: 100px;
-    font-size: 20px;
+    font-size: 24px;
     background: linear-gradient(90deg, rgba(108, 64, 201, 1) 0%, rgba(86, 58, 217, 1) 44%, rgba(30, 110, 232, 1) 85%, rgba(48, 131, 224, 1) 100%);
-
+    position: relative;
 }
 
 .nested-emoji {
     background-color: white;
     border-radius: 18px;
-    width: 37px;
-    height: 38px;
-    margin-left: 2px;
-    margin-top: 1px;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
 }
 
-.chore-name {
+.task-name {
     margin-left: 10px;
     padding: 0;
     line-height: 60px;
